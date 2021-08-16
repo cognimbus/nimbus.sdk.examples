@@ -1,0 +1,13 @@
+<launch>
+	
+  <param name="frequency" value="10"/>
+	
+	<node 
+           pkg="beginner_tutorials"
+           type="talker" 
+	         name="talker"
+           output="screen">
+	</node>
+
+
+</launch>

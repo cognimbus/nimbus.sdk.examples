@@ -5,13 +5,13 @@ ENV ROS_DISTRO noetic
 
 # copy example files
 COPY catkin_ws /catkin_ws
-WORKDIR /catkin_ws/
+WORKDIR /catkin_ws
 RUN . /opt/ros/noetic/setup.sh && catkin_make
 
 # setup entrypoint
-COPY ./ros_entrypoint.sh /
-ENTRYPOINT ["/ros_entrypoint.sh"]
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]
 
-
-CMD ["bash"]
+CMD roslaunch beginner_tutorials talker.launch
