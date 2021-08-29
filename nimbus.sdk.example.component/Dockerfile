@@ -8,7 +8,6 @@ WORKDIR /catkin_ws
 RUN . /opt/ros/noetic/setup.sh && catkin_make
 
 # setup entrypoint
-
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
